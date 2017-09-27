@@ -1,0 +1,58 @@
+<div id="wrapper">
+      <!-- Sidebar -->
+            <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+      <ul id="sidebar_menu" class="sidebar-nav">
+           <li class="sidebar-brand"><img src="http://fifaua.ru/uploads/posts/2012-06/1340834053_fifa-12-zidane-face.png" /></li>
+      </ul>
+        <ul class="sidebar-nav" id="sidebar">
+            <li (click)="getLatestMovies($event)">
+                <i class="fa fa-clock-o" aria-hidden="true"></i><br>
+                latest
+            </li>
+            <li>
+                <i class="fa fa-star" aria-hidden="true"></i><br>
+                popular
+            </li>
+            <li>
+                <i class="fa fa-heart" aria-hidden="true"></i><br>
+                favorites
+            </li>
+            <li>
+                <i class="fa fa-list" aria-hidden="true"></i><br>
+                watchlist
+            </li>
+            <li>
+                <i class="fa fa-search" aria-hidden="true" (click)="toggleChild()"></i><br>
+                <b (click)="toggleChild()">search</b>
+                <div class="search-panel" *ngIf="showSearch">
+                    <input type="text" [(ngModel)]="knowledge_base_section" placeholder="Search" (keyup.enter)="searchMovieNew()" /> <i (click)="searchMovieNew()" class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </li>
+            <li>
+                <i class="fa fa-th" aria-hidden="true"></i><br>
+                genres
+            </li>
+        </ul>
+        <ul class="sidebar-nav sidebar-bottom">
+            <li>
+                <i class="fa fa-power-off" aria-hidden="true"></i><br>
+                sign out
+            </li>
+        </ul>
+      </div>
+
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="container-fluid">
+          <div class="page-content inset">
+              <div class="row">
+                  <div class="col-md-12">
+                    <app-movie [search_term]="search_term_val" [get_latest]="get_latest_val"></app-movie>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>

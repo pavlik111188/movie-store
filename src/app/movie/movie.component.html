@@ -1,0 +1,33 @@
+<div class="row" *ngIf="total_results > 0; else emptyMovies">
+  <div *ngFor="let movie of movies" class="col-sm-3">
+    <div class="card">
+      <div class="card-block">
+        <div class="movie-image">
+          <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{ movie?.poster_path }}">
+        </div>
+        <h3 class="card-title">{{ movie?.title }}</h3>
+        <p class="card-text">{{ movie?.overview }}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #emptyMovies>
+  <div class="row">
+    <div class="col-md-12">No films</div>
+  </div>
+</ng-template>
+<div class="row">
+  <div class="col-md-12">
+    <nav aria-label="Pages">
+      <ul class="pagination">
+        <li class="page-item" *ngIf="page > 1">
+          <a class="page-link" (click)="changePage($event, 'prev')">Previous</a>
+        </li>
+        <li class="page-item" *ngIf="page < total_pages">
+          <a class="page-link" (click)="changePage($event, 'next')">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

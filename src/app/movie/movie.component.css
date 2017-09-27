@@ -1,0 +1,24 @@
+.card-title {
+    margin-bottom: .75rem;
+    height: 35px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+.card {
+  margin-bottom: 30px;
+}
+a {
+    cursor: pointer;
+}
+.movie-image {
+    text-align: center;
+}
+.movie-image img {
+    width: 100%;
+}
+.card-text {
+    height: 120px;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
